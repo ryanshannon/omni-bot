@@ -3,7 +3,14 @@
     "allow": [
       "Bash(mkdir:*)",
       "Bash(tree:*)",
-      "Bash(docker info:*)"
+      "Bash(docker info:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\ndocs(workflow): add git workflow and commit conventions\n\n- Add branching strategy (main, phase-N, fix/)\n- Define commit message conventions\n- Add phase completion checklist with git steps\n- Update definition of done to include git commits\n- Clarify manual git operations until Phase 5\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\ndocs(tracking): add TODO.md and integrate with workflow\n\n- Create comprehensive TODO.md tracking all phases 0-6\n- Document all tasks, acceptance criteria, and current status\n- Update CLAUDE_CODE_INSTRUCTIONS.md to reference TODO.md\n- Add TODO.md updates to Definition of Done\n- Establish TODO.md as single source of truth for progress\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "WebSearch",
+      "Bash(dir \"C:\\Users\\Ryan\\Documents\\Dev\\omni-bot\" /s /b)",
+      "Bash(findstr:*)",
+      "Bash(docker compose run:*)"
     ],
     "deny": [],
     "ask": []
