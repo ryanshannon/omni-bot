@@ -7,6 +7,7 @@ services:
       - ./data:/app/data
       - ./src:/app/src
       - ./prompts:/app/prompts
+      - ./tests:/app/tests
     environment:
       - APP_NAME=OmniAgent
       - APP_VERSION=0.1.0
