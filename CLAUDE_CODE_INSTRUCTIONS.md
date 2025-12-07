@@ -13,6 +13,18 @@ Create a Dockerized application that:
 5) Eventually supports safe self-improvement via:
    GitHub Issue → Spec → Code → Tests in sandbox → PR → Human review → Merge → Auto-restart.
 
+## Task Tracking
+**Reference:** `docs/TODO.md`
+
+All phases, tasks, and progress are tracked in the TODO.md file. This file should be:
+- Consulted at the start of each work session to determine current phase and next tasks
+- Updated as tasks are completed (mark with ✅)
+- Updated when tasks are started (mark with 🔄)
+- Updated when blockers are encountered (add to Blockers section)
+- Committed to git whenever significant progress is made
+
+The TODO.md serves as the single source of truth for project progress and remaining work.
+
 ## Non-Negotiables
 - No self-modifying or GitHub write automation until Phase 5 tasks explicitly say so.
 - Deterministic tasks must be implemented as plain Python services/functions first.
@@ -218,5 +230,6 @@ If ambiguous:
 - Docker build still works
 - Tests included and passing
 - README updated if usage changes
+- `docs/TODO.md` updated with task progress
 - Code committed to git with descriptive message
 - If phase complete: branch ready for PR/merge to main
