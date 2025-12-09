@@ -1,38 +1,104 @@
-# Python
+# -----------------------------
+# Gitignore for omni-bot
+# -----------------------------
+
+# Python byte/compiled
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+
+# C extensions
 *.so
-.Python
+
+# Virtual environment
 env/
 venv/
 ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# Python packaging / build
+.Python
 build/
 dist/
 *.egg-info/
+pip-wheel-metadata/
 
-# Environment
-.env
+# Installer / pip logs
+pip-log.txt
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Data
-data/*.db
-data/*.md
-data/*.json
-
-# Docker
-.dockerignore
-
-# Testing
+# Test / coverage
 .pytest_cache/
 .coverage
+.coverage.*
+coverage.xml
 htmlcov/
+*.cover
+*.py,cover
 
-# OS
+# Type checkers / linters
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Icon?
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and runtime
+*.log
+logs/
+tmp/
+temp/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+docker-compose.*.override.yml
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+secrets.*
+secrets.yml
+*.pem
+*.key
+
+# Databases
+*.db
+*.sqlite3
+data/*.db
+data/*.sqlite3
+
+# Node
+node_modules/
+
+# Misc
+*.pid
+*.seed
+*~
+*.swp
+*.swo
+.claude/
+.history/
+.pytest_cache
+__pycache__/
+
+# Optional: Ignore this workspace lockfile if your workflow generates it locally
+# Pipenv and Poetry lockfiles are often checked into source; uncomment if you want to ignore them
+# Pipfile.lock
+# poetry.lock

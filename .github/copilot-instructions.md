@@ -19,6 +19,15 @@ Build a self-evolving AI research agent that:
 - Secrets must never be hardcoded. Use env vars and `.env.example`.
 - Prefer minimal dependencies.
 - Keep code testable without an LLM present (mock model calls).
+- `.env` is untracked; `.env.example` is the template. Add new env vars there and keep secrets out of code and YAML.
+
+## Developer Environment (Windows / PowerShell)
+
+- Host OS & shell: Windows (default shell: PowerShell 5.1). Prefer PowerShell 7+ or WSL for POSIX-friendly behavior.
+- Command chaining: Use `;` in PowerShell 5.1. `&&/||` work in PowerShell 7+ and POSIX shells but not 5.1.
+- Paths: Prefer repo-relative paths. If absolute paths are needed, provide both `C:\path\to\repo` and `/path/to/repo` variants.
+- Quoting: PowerShell single quotes are literal; double quotes interpolate. Label code blocks with `powershell` vs `bash` when examples differ.
+- Provide both PowerShell and POSIX examples when commands differ; default to shell-agnostic commands when possible.
 
 ## Recommended Stack
 - Python 3.11+
@@ -29,6 +38,12 @@ Build a self-evolving AI research agent that:
 - Microsoft Agent Framework (`agent-framework`)
 - Google GenAI SDK integration added in Phase 2
 - MCP integration added in Phase 3
+
+## Testing & Logging Quickstart
+- Async FastAPI tests: use `httpx.AsyncClient(app=app, base_url="http://test")` and `asyncio_mode = "auto"` (already in pyproject).
+- Run tests: `pytest` (PowerShell chain with `;` if combining commands).
+- Logging: use `structlog.get_logger()` and emit key-value pairs, e.g., `logger.info("event", key=value)`.
+- Mock external calls (Arxiv, LLMs) in tests; keep model/router behind interfaces for easy mocking.
 
 ## Repository Structure (Target)
 .
@@ -163,6 +178,13 @@ Acceptance:
 - Add at least one happy-path integration test per phase
 
 ## Definition of Done
+- Quick checklist before commit/PR:
+  - Tests pass: `pytest`
+  - Docker build/run: `docker compose up --build`
+  - `docs/TODO.md` updated (progress, blockers)
+  - README updated if user-facing change
+  - No secrets committed; `.env.example` updated when env vars change
+
 - Tests pass
 - Docker build works
 - README updated
